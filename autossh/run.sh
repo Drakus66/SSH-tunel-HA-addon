@@ -118,7 +118,7 @@ TEST_COMMAND="/usr/bin/ssh "\
 "-o KbdInteractiveAuthentication=no "\
 "-o ChallengeResponseAuthentication=no "\
 "-o StrictHostKeyChecking=no "\
-"-p ${SSH_PORT} -t -t "\
+"-p ${SSH_PORT} -N "\
 "${USERNAME}@${HOSTNAME} "\
 "2>&1 || true"
 
@@ -149,7 +149,7 @@ COMMAND="/usr/bin/autossh "\
 "-o ExitOnForwardFailure=yes "\
 "-o UserKnownHostsFile=/root/.ssh/known_hosts "\
 "-o GlobalKnownHostsFile=/dev/null "\
-"-p ${SSH_PORT} -t -t "\
+"-p ${SSH_PORT} -N "\
 "-i ${KEY_PATH}/autossh_rsa_key "\
 "${USERNAME}@${HOSTNAME}"
 
